@@ -99,6 +99,10 @@ class Firstpage extends StatelessWidget {
             },
           ),
         ),
+        Padding(
+          padding: EdgeInsets.all(8),
+          child: Divider(color: Colors.white),
+        ),
       ],
     );
   }
