@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:shopping/components/anime.dart';
 
 class shoetile extends StatelessWidget {
-  Data data;
-  shoetile({super.key, required this.data});
+  final Data data;
+  void Function()? onTap;
+  shoetile({super.key, required this.data, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +21,19 @@ class shoetile extends StatelessWidget {
         children: [
           //image
           Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Image.asset("assets/logo (4).png"),
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              // padding: EdgeInsets.all(10),
+              height: 300,
+              width: 300,
+              decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage(data.image)),
+              ),
+            ),
           ),
 
           //discription
-          Text("Kame hame haaaa...", style: TextStyle(fontSize: 18)),
+          Text(data.discription, style: TextStyle(fontSize: 18)),
           SizedBox(height: 4),
 
           //price and tag
@@ -38,23 +46,22 @@ class shoetile extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      "Son Goku",
+                      data.name,
                       style: TextStyle(
                         // fontWeight: FontWeight.bold,
                         fontSize: 20,
-                        color: Colors.grey[700],
+                        color: Colors.black,
                       ),
                     ),
                     Text(
-                      "778k",
-                      style: TextStyle(
-                        // fontWeight: FontWeight.bold
-                      ),
+                      data.price,
+                      style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
                 // add button
                 GestureDetector(
+                  onTap: onTap,
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(

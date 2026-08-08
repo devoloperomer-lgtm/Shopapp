@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shopping/components/data.dart';
 import 'package:shopping/intropage.dart';
 
 void main() {
@@ -10,6 +12,9 @@ class myaap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Intropage());
+    return ChangeNotifierProvider(
+      create: (context) => Char(),
+      builder: (context, child) => const MaterialApp(home: Intropage()),
+    );
   }
 }
