@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shopping/components/anime.dart';
 import 'package:shopping/components/data.dart';
 
 class Animetile extends StatefulWidget {

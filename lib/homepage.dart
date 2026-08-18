@@ -17,6 +17,29 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Anime App"), centerTitle: true),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            DrawerHeader(child: Image.asset("assets/logo (1).png")),
+            Divider(),
+            Padding(
+              padding: EdgeInsetsGeometry.all(8),
+              child: ListTile(
+                leading: Icon(Icons.home),
+                title: Text("Home Page"),
+              ),
+            ),
+
+            Padding(
+              padding: EdgeInsetsGeometry.all(8),
+              child: ListTile(
+                leading: Icon(Icons.card_giftcard),
+                title: Text("Card Page"),
+              ),
+            ),
+          ],
+        ),
+      ),
       bottomNavigationBar: Navigations(
         currentindex: _selectiveindex,
         onchanged: (index) {

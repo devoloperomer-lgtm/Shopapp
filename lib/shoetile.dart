@@ -3,8 +3,8 @@ import 'package:shopping/components/anime.dart';
 
 class shoetile extends StatelessWidget {
   final Data data;
-  void Function()? onTap;
-  shoetile({super.key, required this.data, required this.onTap});
+  final void Function()? onTap;
+  const shoetile({super.key, required this.data, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
